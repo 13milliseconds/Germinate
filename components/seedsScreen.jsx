@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Text, Heading, Button, View } from "native-base";
+import { Container, Text, Heading, View } from "native-base";
 
 export default SeedsScreen =  () => {
 

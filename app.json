@@ -1,8 +1,9 @@
 {
   "expo": {
-    "name": "germinate",
+    "name": "seedstofruit",
     "slug": "germinate",
     "version": "1.0.0",
+    "privacy": "unlisted",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -16,7 +17,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "germinate"
+      "bundleIdentifier": "seedstofruit"
     },
     "android": {
       "adaptiveIcon": {
