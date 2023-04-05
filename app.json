@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.auth0samples"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -33,6 +34,15 @@
         "projectId": "da068508-16c8-4d4e-853f-482a4f6a3ba6"
       }
     },
-    "owner": "13milliseconds"
+    "owner": "13milliseconds",
+    "plugins": [
+      [
+        "react-native-auth0",
+        {
+          "domain": "seedtofruit.us.auth0.com",
+          "customScheme": "thisisacustomstring"
+        }
+      ]
+    ]
   }
 }

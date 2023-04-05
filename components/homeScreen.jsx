@@ -1,5 +1,7 @@
 import React from "react";
-import { Container, Text, Heading, Button, View } from "native-base";
+import { Container, Text, Heading, View } from "native-base";
+import LogoutButton from "./logoutButton";
+
 
 export default HomeScreen =  () => {
 
@@ -11,7 +13,7 @@ export default HomeScreen =  () => {
           <Text mt="3" fontWeight="medium">
             Keep track of your seeds, seedling and plant from see to fruit.
           </Text>
-          <Button>Let's get started</Button>
+          <LogoutButton />
         </Container>
       </View>
 }

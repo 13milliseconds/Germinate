@@ -3,10 +3,12 @@ import { NativeBaseProvider, extendTheme } from "native-base";
 import {NavigationContainer} from '@react-navigation/native'; 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {useAuth0, Auth0Provider} from 'react-native-auth0';
+
+//Components
 import LoadingScreen from './components/loadingScreen'
 import SigninScreen from './components/signinScreen'
 import HomeScreen from './components/homeScreen'
-import SettingsScreen from './components/settingsScreen'
 import SeedsScreen from './components/seedsScreen'
 import BedsScreen from './components/bedsScreen'
 import SproutsScreen from './components/sproutsScreen'
@@ -23,7 +25,7 @@ const newColorTheme = {
 };
 const theme = extendTheme({ colors: newColorTheme });
 
-function MainNav() {
+function MainNav() { 
   return <Tab.Navigator initialRouteName="Home">
     <Tab.Screen name="Home" component={HomeScreen} />
     <Tab.Screen name="Seeds" component={SeedsScreen} />
@@ -34,43 +36,27 @@ function MainNav() {
 
 export default function App() {
   const [isLoading, setIsLoading] = React.useState(true);
-  const [userToken, setUserToken] = React.useState(null);
+  const {user, error} = useAuth0();
 
-  const getUserToken = async () => {
-    // testing purposes
-    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-    try {
-      // custom logic
-      await sleep(2000);
-      const token = null;
-      setUserToken(token);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  React.useEffect(() => {
-    getUserToken();
-  }, []);
-
-  if (isLoading) {
-    return <NativeBaseProvider theme={theme}>
-        <LoadingScreen />
-      </NativeBaseProvider>
-  }
+  // if (isLoading) {
+  //   return <NativeBaseProvider theme={theme}>
+  //       <LoadingScreen />
+  //     </NativeBaseProvider>
+  // }
 
   return (
+    <Auth0Provider domain={"seedtofruit.us.auth0.com"} clientId={"bjyTtOlpNHSSqq2xMcj7t9utyonKzP8q"}>
     <NavigationContainer>
     <NativeBaseProvider theme={theme}>
     <Stack.Navigator>
-        {userToken == null ? (
+        {!user ? (
           <Stack.Screen
             name="SignIn"
             component={SigninScreen}
             options={{
               title: 'Sign in',
             }}
-            initialParams={{ setUserToken }}
+            initialParams={{ user }}
           />
         ) : (
           <Stack.Screen
@@ -84,6 +70,7 @@ export default function App() {
       </Stack.Navigator>
     </NativeBaseProvider>
     </NavigationContainer>
+    </Auth0Provider>
   );
 }
 
