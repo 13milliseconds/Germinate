@@ -6,7 +6,7 @@ export default LogoutButton = () => {
 
   const onPress = async () => {
       try {
-          await clearSession({customScheme: 'thisisacustomstring'});
+          await clearSession({customScheme: 'seedtofruit'});
       } catch (e) {
           console.log(e);
       }

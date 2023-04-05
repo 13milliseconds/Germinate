@@ -18,7 +18,8 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "seedstofruit"
+      "bundleIdentifier": "seedstofruit",
+      "buildNumber": 2
     },
     "android": {
       "adaptiveIcon": {
@@ -41,7 +42,7 @@
         "react-native-auth0",
         {
           "domain": "seedtofruit.us.auth0.com",
-          "customScheme": "thisisacustomstring"
+          "customScheme": "seedtofruit"
         }
       ]
     ],

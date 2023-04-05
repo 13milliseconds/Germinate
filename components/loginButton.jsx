@@ -6,7 +6,7 @@ export default LogoutButton = () => {
 
     const onPress = async () => {
         try {
-            await authorize({scope: 'openid profile email'}, {customScheme: 'thisisacustomstring'});
+            await authorize({scope: 'openid profile email'}, {customScheme: 'seedtofruit'});
         } catch (e) {
             console.log(e);
         }

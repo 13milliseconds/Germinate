@@ -116,7 +116,7 @@ android {
     namespace "com.seedstofruit"
     defaultConfig {
 // @generated begin react-native-auth0-manifest-placeholder - expo prebuild (DO NOT MODIFY) sync-0f22c7b6d7df6643d1ef6df93a23be73f6a1e538
-manifestPlaceholders = [auth0Domain: "seedtofruit.us.auth0.com", auth0Scheme: "YOUR_CUSTOM_SCHEME"]
+manifestPlaceholders = [auth0Domain: "seedtofruit.us.auth0.com", auth0Scheme: "seedtofruit"]
 // @generated end react-native-auth0-manifest-placeholder
         applicationId 'com.auth0samples'
         minSdkVersion rootProject.ext.minSdkVersion
